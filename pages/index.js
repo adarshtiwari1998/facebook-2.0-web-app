@@ -1,6 +1,13 @@
-import Head from 'next/head'
-import Header from '../components/Header'
-export default function Home() {
+
+import { getSession } from "next-auth/client";
+import Head from 'next/head';
+import Header from '../components/Header/Header';
+import Login from '../components/Login/Login';
+
+export default function Home({ session }) {
+  //if user is not login so return login component
+  if (!session) return <Login />
+  // if user is already login so otherise return entire app
   return (
     <div>
       <Head>
@@ -11,5 +18,17 @@ export default function Home() {
 
     <Header />
     </div>
-  )
+  );
+}
+
+
+export async function getServerSideProps(context) {
+  //get the user
+  const session = await getSession(context);
+   
+  return {
+    props: {
+      session
+    }
+  }
 }

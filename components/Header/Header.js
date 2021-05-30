@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { SearchIcon, FlagIcon, PlayIcon, ShoppingCartIcon } from "@heroicons/react/outline";
 import {  HomeIcon, BellIcon, ChatIcon, UserGroupIcon, ViewGridIcon, ChevronDownIcon} from "@heroicons/react/solid";
-import HeaderIcon from "./Icons/HeaderIcon";
+import HeaderIcon from "../Icons/HeaderIcon";
 function Header() {
     return (
      <div className="sticky top-0 z-50 bg-white flex items-center shadow-md p-2 lg:px-5 ">
