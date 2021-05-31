@@ -1,13 +1,41 @@
 import Image from "next/image";
-import { useSession} from "next-auth/client";
+import { useSession } from "next-auth/client";
+import { useRef } from "react";
 import { EmojiHappyIcon } from "@heroicons/react/outline";
 import {CameraIcon, VideoCameraIcon} from "@heroicons/react/solid"
+import { db } from "../../firebase";
+import firebase from "firebase";
 function InputBox() {
-// to define the user session
+// to define and initialize the user session
 const [session] = useSession();
-
+// initialize the input reference
+const inputRef = useRef(null);
+// to initialize the sendpost button
 const sendPost = (e) => {
     e.preventDefault();
+
+  //allow someone to send the post if value of entry folder is empty
+  if (!inputRef.current.value) return;
+
+  //and if the value is already here then continue this
+
+  db.collection("posts").add({
+    // first pushing the message to the
+    message: inputRef.current.value,
+    // username are dynamic push
+    name: session.user.name,
+    // useremail are dynamic push
+    email: session.user.email,
+    // userimage are dynamic pushing
+    image: session.user.image,
+    // timestamp when user are pushing message and add post to firestore database
+    // this gives the server timestamp of firebase firestore
+    timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+
+  });
+
+  //close the input field after message are sendPost
+  inputRef.current.value = "";
 };
     return (
         <div className="bg-white p-2 rounded-2xl shadow-md text-gray-500 font-medium mt-6">
@@ -24,6 +52,7 @@ const sendPost = (e) => {
              <input 
              className="rounded-full h-12 bg-gray-100  flex-grow px-5 focus:outline-none"
              type="text" 
+             ref={inputRef}
              placeholder={`What's on your mind, ${session.user.name}?`} />
              <button hidden type="submit" onClick={sendPost}>Submit</button>
             </form>
