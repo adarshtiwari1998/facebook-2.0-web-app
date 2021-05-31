@@ -1,6 +1,6 @@
 import {useSession} from "next-auth/client";
-import {ChevronDownIcon, ShoppingBagIcon, UserGroupIcon } from "@heroicons/react/outline";
-import {CalendarIcon, ClockIcon, DesktopComputerIcon, UsersIcon} from "@heroicons/react/solid";
+import {ChevronDownIcon, ShoppingBagIcon, UserGroupIcon, FlagIcon } from "@heroicons/react/outline";
+import {CalendarIcon, ClockIcon, DesktopComputerIcon, UsersIcon, BookmarkIcon, BriefcaseIcon} from "@heroicons/react/solid";
 import SidebarRow from "./SidebarRow";
 function Sidebar() {
 const [session, loading] = useSession();
@@ -14,8 +14,10 @@ const [session, loading] = useSession();
           <SidebarRow Icon={DesktopComputerIcon} title="Watch" /> 
           <SidebarRow Icon={CalendarIcon} title="Events" /> 
           <SidebarRow Icon={ClockIcon} title="Memories" /> 
+          <SidebarRow Icon={BookmarkIcon} title="Saved" /> 
+          <SidebarRow Icon={FlagIcon} title="Pages" /> 
+          <SidebarRow Icon={BriefcaseIcon} title="Jobs" /> 
           <SidebarRow Icon={ChevronDownIcon} title="See More" /> 
-           
         </div>
     )
 }
