@@ -1,8 +1,12 @@
 import Image from "next/image";
+import { useSession, signOut} from "next-auth/client";
 import { SearchIcon, FlagIcon, PlayIcon, ShoppingCartIcon } from "@heroicons/react/outline";
 import {  HomeIcon, BellIcon, ChatIcon, UserGroupIcon, ViewGridIcon, ChevronDownIcon} from "@heroicons/react/solid";
 import HeaderIcon from "../Icons/HeaderIcon";
 function Header() {
+// to define the user session
+const [session] = useSession();
+
     return (
      <div className="sticky top-0 z-50 bg-white flex items-center shadow-md p-2 lg:px-5 ">
       {/* left */}
@@ -33,7 +37,16 @@ function Header() {
         {/* Right */}
          <div className="flex items-center sm:space-x-2 justify-end">
           {/* {profile picture in avatar} */}
-          <p className="whitespace-nowrap font-semibold pr-3">Adarsh Tripathi</p>
+          <Image 
+          onClick={signOut}
+          className="rounded-full cursor-pointer"
+          // to dynamically render the user image
+          src={session.user.image}
+          width="40"
+          height="40"
+          layout="fixed"
+          />
+          <p className="whitespace-nowrap font-semibold pr-3">{session.user.name}</p>
           <ViewGridIcon className="icon" />
           <ChatIcon className="icon" />
           <BellIcon className="icon" />
