@@ -1,37 +1,45 @@
 export const widgetscontacts = [
+
     {
         id: "1",
-        name: "Adarsh Tripathi",
-        src: "https://bit.ly/3c6pGXB",
-        profile: "https://bit.ly/3vzre4h",
+        name: "Narendra Modi",
+        src: "https://bit.ly/2SMfoFa",
     },
-
+    
     {
         id: "2",
         name: "Elon Musk",
         src: "https://bit.ly/3wKFOWM",
-        profile: "https://bit.ly/3wKoxwG",
     },
 
     {
         id: "3",
-        name: "Jeff Bezoz",
-        src: "https://bit.ly/3fYgXrt",
-        profile: "https://bit.ly/2R40dH0",
+        name: "Mark Zukerberg",
+        src: "https://bit.ly/3p1C8gH",
     },
 
     {
         id: "4",
-        name: "Mark Zukerberg",
-        src: "https://bit.ly/3p1C8gH",
-        profile: "https://bit.ly/3i0i7FP",
+        name: "Jeff Bezoz",
+        src: "https://bit.ly/3fYgXrt",
     },
 
     {
         id: "5",
+        name: "Virat Kohli",
+        src: "https://bit.ly/2SMfMDC",
+    },
+
+    {
+        id: "6",
         name: "Bill Gates",
         src: "https://bit.ly/2SDWxwe",
-        profile: "https://bit.ly/3uzacBO",
+    },
+
+    {
+        id: "7",
+        name: "Harrry Potter",
+        src: "https://bit.ly/2SPtgig",
     },
 
 ];
