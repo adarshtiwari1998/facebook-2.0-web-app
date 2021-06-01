@@ -1,12 +1,11 @@
-import {widgetscontacts} from "./Data";
 import {SearchIcon} from "@heroicons/react/outline";
 import {DotsHorizontalIcon, VideoCameraIcon} from "@heroicons/react/solid"
-
+import Contact from "./Contact";
 
 function Widgets() {
     return (
-        <div>
-          <div>
+        <div className="hidden lg:flex flex-col w-60 p-2 mt-5">
+          <div className="flex justify-between mb-5 items-center text-gray-500">
             <h2 className="text-xl">Contacts</h2>
             <div className="flex space-x-2">
              <VideoCameraIcon className="h-6" />
@@ -14,6 +13,10 @@ function Widgets() {
              <DotsHorizontalIcon className="h-6" />
             </div>
           </div>
+          {/* render the widgetscontacts array data */}
+           {contacts.map(contact => {
+               <Contact />
+           })}
         </div>
     )
 }
