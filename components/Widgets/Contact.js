@@ -1,4 +1,3 @@
-import {widgetscontacts} from "./Data";
 
 function Contact() {
     return (

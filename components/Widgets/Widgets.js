@@ -1,3 +1,4 @@
+import {widgetscontacts} from "./Data";
 import {SearchIcon} from "@heroicons/react/outline";
 import {DotsHorizontalIcon, VideoCameraIcon} from "@heroicons/react/solid"
 import Contact from "./Contact";
@@ -13,9 +14,9 @@ function Widgets() {
              <DotsHorizontalIcon className="h-6" />
             </div>
           </div>
-          {/* render the widgetscontacts array data */}
-           {contacts.map(contact => {
-               <Contact />
+          {/*  initialize the widgetscontacts array data in a component contact */}
+           {widgetscontacts.map((contact) => {
+            <Contact key={contact.src} src={contact.src}  name={contacts.name}/>
            })}
         </div>
     )
