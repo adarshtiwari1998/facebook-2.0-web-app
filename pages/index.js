@@ -6,8 +6,9 @@ import Header from '../components/Header/Header';
 import Login from '../components/Login/Login';
 import Sidebar from "../components/Sidebar/Sidebar";
 import Widgets from "../components/Widgets/Widgets";
+import { db } from "../firebase";
 
-export default function Home({ session }) {
+export default function Home({ session, posts }) {
   //if user is not login so return login component
   if (!session) return <Login />
   // if user is already login so otherise return entire app
@@ -22,7 +23,9 @@ export default function Home({ session }) {
      <Header />
      <main className="flex">
       <Sidebar />
-      <Feed />
+      <Feed
+      // feed it through and parsing the posts
+       posts={posts} />
       <Widgets />
      </main>
 
@@ -34,10 +37,30 @@ export default function Home({ session }) {
 export async function getServerSideProps(context) {
   //get the user
   const session = await getSession(context);
-   
+  //post have been prefatched on the server before he reaches the borwsers
+  // prefatch the post on the server side
+   const posts = await db.collection("posts")
+   //order by timestamp in desc
+   .orderBy("timestamp", "desc")
+   //get the informations
+   .get();
+
+   //transform the informations with docs map with firebase format so we need map
+    const docs = posts.docs.map((post) => ({
+    // post id
+    id: post.id,
+    // post data
+    ...post.data(),
+    //not send the timestamp 
+    timestamp: null,
+    }));
+
+
   return {
     props: {
-      session
-    }
-  }
+      session,
+      //passes backthrough as props 
+      posts: docs,
+    },
+  };
 }
