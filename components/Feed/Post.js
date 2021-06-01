@@ -15,14 +15,22 @@ function Post({name, message, email, image, timestamp, postImage}) {
                alt="" />
                <div className="">
                 <p className="font-medium">{name}</p>
-                <p className="text-xs text-gray-400">
-              {
-             //takes the time from firebase
-              new Date(timestamp  
-             // convert into into to date
-             ?.toDate())
-             // convert the date into your local string 
-             .toLocaleString()}</p>
+                 {/* get realtime timestamp from firebase on browsers load */}
+                {timestamp ? (
+                  <p className="text-xs text-gray-400">
+                  {
+                 //takes the time from firebase
+                  new Date(timestamp  
+                 // convert into into to date
+                 ?.toDate())
+                 // convert the date into your local string 
+                 .toLocaleString()}</p>
+                ) 
+                // when timestamp coming from firebase firestore on browsers so instead display loading text
+                : (
+                  <p className="text-xs text-gray-400">Loading...</p>
+                )}
+              
              <p className="text-xs text-gray-400">{email}</p>
             </div>
            </div>
