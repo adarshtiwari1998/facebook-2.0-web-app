@@ -10,7 +10,7 @@ import { db } from "../firebase";
 
 export default function Home({ session, posts }) {
   //if user is not login so return login component
-  if (!session) return <Login />
+  // if (!session) return <Login />
   // if user is already login so otherise return entire app
   return (
     <div className="h-screen bg-gray-100 overflow-hidden">
