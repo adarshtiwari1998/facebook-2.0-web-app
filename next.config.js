@@ -1,8 +1,8 @@
 module.exports = {
 
-    // future: {
-    //     webpack5: true,
-    // },
+    future: {
+        webpack: true,
+    },
 
     images: {
         domains: [
