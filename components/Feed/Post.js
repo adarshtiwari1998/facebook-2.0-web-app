@@ -46,15 +46,15 @@ function Post({name, message, email, image, timestamp, postImage}) {
           )}
           {/* footer section of post */}
           <div className="flex items-center justify-between rounded-b-2xl bg-white shadow-md text-gray-400 border-t dark:bg-gray-800 dark:text-white dark:shadow-md">
-          <div className="inputIcon rounded-none rounded-bl-2xl dark:hover:text-black">
+          <div className="inputIcon rounded-none rounded-bl-2xl dark:hover:text-gray-500">
             <ThumbUpIcon className="h-4" />
             <p className="text-xs sm:text-base">Like</p>
             </div>
-            <div className="inputIcon rounded-none dark:hover:text-black">
+            <div className="inputIcon rounded-none dark:hover:text-gray-500">
             <ChatAltIcon className="h-4" />
             <p className="text-xs sm:text-base">Comment</p>
             </div>
-            <div className="inputIcon rounded-none rounded-br-2xl dark:hover:text-black">
+            <div className="inputIcon rounded-none rounded-br-2xl dark:hover:text-gray-500">
              <ShareIcon className="h-4" />
              <p className="text-xs sm:text-base">Share</p>
             </div>

@@ -128,7 +128,7 @@ const sendPost = (e) => {
             <form className="flex flex-1" >
               {/* jsx use in placeholder with asterisk */}
              <input 
-             className="rounded-full h-12 bg-gray-100  flex-grow px-5 focus:outline-none"
+             className="rounded-full h-12 bg-gray-100  flex-grow px-5 focus:outline-none dark:hover:text-gray-500"
              type="text" 
              ref={inputRef}
              placeholder={`What's on your mind, ${session.user.name}?`} />
@@ -147,17 +147,17 @@ const sendPost = (e) => {
 
           </div>
           <div className="flex justify-evenly p-3 border-t">
-            <div className="inputIcon dark:hover:text-black">
+            <div className="inputIcon dark:hover:text-gray-500">
             <VideoCameraIcon className="h-7 text-red-500" />
             <p className="text-xs sm:text-sm xl:text-base">Live Video</p>
             </div>
-            <div onClick={() => filepickerRef.current.click()} className="inputIcon dark:hover:text-black">
+            <div onClick={() => filepickerRef.current.click()} className="inputIcon dark:hover:text-gray-500">
             <CameraIcon className="h-7 text-green-400" />
             <p className="text-xs sm:text-sm xl:text-base">Photo/Video</p>
             {/* hidden input field to for add image to post button  */}
             <input ref={filepickerRef} hidden type="file" onChange={addImageToPost} />
             </div>
-              <div className="inputIcon dark:hover:text-black">
+              <div className="inputIcon dark:hover:text-gray-500">
               <EmojiHappyIcon className="h-7 text-yellow-300" />
             <p className="text-xs sm:text-sm xl:text-base">Feeling/Activity</p>
               </div>
