@@ -3,7 +3,7 @@ import Image from "next/image";
 // props the widgets contact data here
 function Contact({src, name}) {
     return (
-        <div className="relative flex items-center cursor-pointer space-x-3 mb-2 p-2 hover:bg-gray-200 rounded-xl  ">
+        <div className="relative flex items-center cursor-pointer space-x-3 mb-2 p-2 hover:bg-gray-200 rounded-xl dark:hover:text-black  ">
            <Image
             className="rounded-full"
             object="cover"

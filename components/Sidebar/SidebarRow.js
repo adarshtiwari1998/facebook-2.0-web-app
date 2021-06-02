@@ -1,7 +1,7 @@
 import Image from "next/image";
 function SidebarRow({src, Icon, title}) {
     return (
-        <div className="flex items-center space-x-2 p-2 hover:bg-gray-200 rounded-xl cursor-pointer">
+        <div className="flex items-center space-x-2 p-2 hover:bg-gray-200 rounded-xl cursor-pointer dark:hover:text-black">
             {/* this is called conditional rendering */}
             {/* if they parsing the image then import next image and render image source */}
             {src && (

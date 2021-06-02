@@ -20,7 +20,7 @@ useEffect(() => {
 }, [darkMode]);
 
     return (
-     <div className="sticky top-0 z-50 bg-white flex items-center shadow-md p-2 lg:px-5 dark:bg-gray-800 dark:text-white ">
+     <div className="sticky top-0 z-50 bg-white flex items-center shadow-md p-2 lg:px-5 dark:bg-gray-800 dark:text-white">
       {/* left */}
         <div className="flex items-center">
         <Image src="https://bit.ly/2RNJUyk" 
@@ -63,11 +63,17 @@ useEffect(() => {
           <ChatIcon className="icon" />
           <BellIcon className="icon" />
           <ChevronDownIcon className="icon" />
-          <button onClick={() => setDarkMode(!darkMode)}>
+          <button onClick={() => setDarkMode(!darkMode)} className="focus:outline-none">
     {darkMode ? (
-      <SunIcon className="icon" />
+      <div className="flex space-x-2 text-center place-items-center">
+      <SunIcon className="icontogglemode" />
+      <p className="hidden md:inline-flex md:text-gray-400 lg:text-gray-400">DarkMode</p>
+      </div>
     ) : (
-      <MoonIcon className="icon" />
+      <div className="flex space-x-2 text-center place-items-center">
+      <MoonIcon className="icontogglemode" />
+      <p className="hidden md:inline-flex md:text-gray-400 lg:text-gray-400">LightMode</p>
+      </div>
     )}
   </button>
          </div>

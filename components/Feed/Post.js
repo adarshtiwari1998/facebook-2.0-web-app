@@ -5,7 +5,7 @@ import {ChatAltIcon, ThumbUpIcon, ShareIcon} from "@heroicons/react/outline";
 function Post({name, message, email, image, timestamp, postImage}) {
     return (
         <div className="flex flex-col">
-          <div className="bg-white p-5 mt-5 rounded-t-2xl shadow-sm">
+          <div className="bg-white p-5 mt-5 rounded-t-2xl shadow-sm dark:bg-gray-800 dark:text-white dark:hover:text-white dark:shadow-sm">
            <div className="flex items-center space-x-2">
                <img
                className="rounded-full" 
@@ -45,16 +45,16 @@ function Post({name, message, email, image, timestamp, postImage}) {
               </div>
           )}
           {/* footer section of post */}
-          <div className="flex items-center justify-between rounded-b-2xl bg-white shadow-md text-gray-400 border-t">
-          <div className="inputIcon rounded-none rounded-bl-2xl">
+          <div className="flex items-center justify-between rounded-b-2xl bg-white shadow-md text-gray-400 border-t dark:bg-gray-800 dark:text-white dark:shadow-md">
+          <div className="inputIcon rounded-none rounded-bl-2xl dark:hover:text-black">
             <ThumbUpIcon className="h-4" />
             <p className="text-xs sm:text-base">Like</p>
             </div>
-            <div className="inputIcon rounded-none">
+            <div className="inputIcon rounded-none dark:hover:text-black">
             <ChatAltIcon className="h-4" />
             <p className="text-xs sm:text-base">Comment</p>
             </div>
-            <div className="inputIcon rounded-none rounded-br-2xl">
+            <div className="inputIcon rounded-none rounded-br-2xl dark:hover:text-black">
              <ShareIcon className="h-4" />
              <p className="text-xs sm:text-base">Share</p>
             </div>

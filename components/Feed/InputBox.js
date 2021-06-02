@@ -116,7 +116,7 @@ const sendPost = (e) => {
   }
 
     return (
-        <div className="bg-white p-2 rounded-2xl shadow-md text-gray-500 font-medium mt-6">
+        <div className="bg-white p-2 rounded-2xl shadow-md text-gray-500 font-medium mt-6 dark:bg-gray-800 dark:text-white dark:hover:text-white dark:shadow-md">
           <div className="flex space-x-4 p-4 items-center">
           <Image 
             className="rounded-full"
@@ -147,17 +147,17 @@ const sendPost = (e) => {
 
           </div>
           <div className="flex justify-evenly p-3 border-t">
-            <div className="inputIcon">
+            <div className="inputIcon dark:hover:text-black">
             <VideoCameraIcon className="h-7 text-red-500" />
             <p className="text-xs sm:text-sm xl:text-base">Live Video</p>
             </div>
-            <div onClick={() => filepickerRef.current.click()} className="inputIcon">
+            <div onClick={() => filepickerRef.current.click()} className="inputIcon dark:hover:text-black">
             <CameraIcon className="h-7 text-green-400" />
             <p className="text-xs sm:text-sm xl:text-base">Photo/Video</p>
             {/* hidden input field to for add image to post button  */}
             <input ref={filepickerRef} hidden type="file" onChange={addImageToPost} />
             </div>
-              <div className="inputIcon">
+              <div className="inputIcon dark:hover:text-black">
               <EmojiHappyIcon className="h-7 text-yellow-300" />
             <p className="text-xs sm:text-sm xl:text-base">Feeling/Activity</p>
               </div>
