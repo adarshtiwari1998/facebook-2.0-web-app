@@ -7,6 +7,7 @@ function HeaderIcon({ Icon, active }) {
         text-center sm:h-7 mx-auto group-hover:text-blue-500
         ${active && "text-blue-500"}`} />
         </div>
+        
     )
 }
 

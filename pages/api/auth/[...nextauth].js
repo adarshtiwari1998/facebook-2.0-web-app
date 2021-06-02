@@ -8,6 +8,13 @@ export default NextAuth({
       clientId: process.env.FACEBOOK_CLIENT_ID,
       clientSecret: process.env.FACEBOOK_CLIENT_SECRET,
     }),
+    
+    // ...add more providers here
+    //  Providers.Google({
+    //   clientId: process.env.GOOGLE_CLIENT_ID,
+    //   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    // }),
+
     // ...add more providers here
   ],
-})
+});
